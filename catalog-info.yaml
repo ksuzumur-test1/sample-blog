@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sample-blog
+  description: sample-blog のサービスです。
+  labels:
+    app: sample-blog
+  links:
+    - url: https://console-openshift-console.apps.test.lab.local/k8s/cluster/projects/sample-blog
+      title: OpenShift Console
+      icon: dashboard
+    - url: https://nginx-sample-blog.apps.test.lab.local
+      title: Application Web Site
+      icon: dashboard
+    - url: https://github.com/ksuzumur-test1/sample-blog
+      title: App Repository
+      icon: github
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=sample-blog'
+    backstage.io/kubernetes-namespace: sample-blog
+spec:
+  type: website
+  owner: user:default/ksuzumur
+  lifecycle: production
